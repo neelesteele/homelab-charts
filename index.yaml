@@ -1,99 +1,67 @@
 apiVersion: v1
 entries:
-  emby:
+  confvolume:
   - apiVersion: v1
-    appVersion: "1.0"
-    created: 2018-08-19T15:52:24.177694229+02:00
-    description: Emby Server (Media Browser)
-    digest: b1c52ecb2ed59478f75eacb3b3e79a29e37fcba9b6ae42a8528f5a6ff4bf0801
-    icon: https://bananaspliff.github.io/geek-charts/emby/logo/emby.jpg
-    name: emby
+    created: "2024-01-11T01:14:39.910833-05:00"
+    description: PVC ReadWriteMany for current Namespace
+    digest: cf2a4ed25c2205e64cdf3070adec1d71c7354006f7a0f9fddf6e9dba828f85fd
+    name: confvolume
     urls:
-    - https://bananaspliff.github.io/geek-charts/emby-0.1.0.tgz
-    version: 0.1.0
-  filebrowser:
-  - apiVersion: v1
-    appVersion: "1.0"
-    created: 2018-08-19T15:52:24.177933617+02:00
-    description: Simple Web File Manager
-    digest: eccdbdda32db10c0df106b1e4a051cf384b9606d358c452ea351782af3e32a16
-    icon: https://bananaspliff.github.io/geek-charts/filebrowser/logo/filebrowser.svg
-    name: filebrowser
-    urls:
-    - https://bananaspliff.github.io/geek-charts/filebrowser-0.1.0.tgz
+    - https://github.com/neelesteele/homelab-charts/confvolume-0.1.0.tgz
     version: 0.1.0
   jackett:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2018-08-19T15:52:24.178754888+02:00
+    created: "2024-01-11T01:14:39.912898-05:00"
     description: Jackett - shut:p
-    digest: 1e081aa9927881e09e836e196471f18eb850174ae63a5216f7fc8303323089b5
-    icon: https://bananaspliff.github.io/geek-charts/jackett/logo/jackett.png
+    digest: 83dd9fc0e1baa25e1f4d6b698f933f7989297034c44989167921b3de59a7e911
+    icon: https://neelesteele.github.io/homelab-charts/jackett/logo/jackett.png
     name: jackett
     urls:
-    - https://bananaspliff.github.io/geek-charts/jackett-0.1.0.tgz
-    version: 0.1.0
-  myvolume:
-  - apiVersion: v1
-    created: 2018-08-19T15:52:24.178908838+02:00
-    description: PVC ReadWriteMany for current Namespace
-    digest: 650967d612fa7daecc43bddf7ba67401768c9a64b58a799168c586dfc9bc9e03
-    name: myvolume
-    urls:
-    - https://bananaspliff.github.io/geek-charts/myvolume-0.1.0.tgz
+    - https://github.com/neelesteele/homelab-charts/jackett-0.1.0.tgz
     version: 0.1.0
   ombi:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2018-08-19T15:52:24.179382741+02:00
+    created: "2024-01-11T01:14:39.91356-05:00"
     description: Ombi - Automatic downloader for movies :)
-    digest: 34ca154628e860d175e87bbdcb4809d0ae82144f5bc3848dbd52a37293238b67
-    icon: https://bananaspliff.github.io/geek-charts/ombi/logo/ombi.png
+    digest: 30a10b868c1ebca50db43078b8e1735a7ebd839750575e24a58f48e853da3a24
+    icon: https://neelesteele.github.io/homelab-charts/ombi/logo/ombi.png
     name: ombi
     urls:
-    - https://bananaspliff.github.io/geek-charts/ombi-0.1.0.tgz
-    version: 0.1.0
+    - https://github.com/neelesteele/homelab-charts/ombi-1.0.0.tgz
+    version: 1.0.0
+  prowlarr:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2024-01-11T01:14:39.914913-05:00"
+    description: prowlarr - Indexer Manager/Proxy For Torrents/Usenet
+    digest: c1a1dd1a4980812fd50432372dc846670c31abe33ef6164905104a6a95440149
+    icon: https://neelesteele.github.io/homelab-charts/prowlarr/logo/prowlarr.png
+    name: prowlarr
+    urls:
+    - https://github.com/neelesteele/homelab-charts/prowlarr-1.0.0.tgz
+    version: 1.0.0
   radarr:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2018-08-19T15:52:24.180187925+02:00
+    created: "2024-01-11T01:14:39.91664-05:00"
     description: Radarr - Automatic downloader for movies :)
-    digest: aae96813aa854e9084254c68c99850b16ee056dcfca069124b0a60aad368d3c6
-    icon: https://bananaspliff.github.io/geek-charts/radarr/logo/radarr.png
+    digest: 1f8d42f0a6ab19e50752cd7773cba90b947065f6df29decd07e9abd166530c0f
+    icon: https://neelesteele.github.io/homelab-charts/radarr/logo/radarr.png
     name: radarr
     urls:
-    - https://bananaspliff.github.io/geek-charts/radarr-0.1.0.tgz
-    version: 0.1.0
-  sftp:
-  - apiVersion: v1
-    created: 2018-08-19T15:52:24.180972451+02:00
-    description: A SFTP HELM chart for Kubernetes
-    digest: 58196e86bb57a1432d55705385a0ccf5562c8e0876d23b7034876f533bb4d153
-    icon: https://bananaspliff.github.io/geek-charts/sftp/logo/sftp.png
-    name: sftp
-    urls:
-    - https://bananaspliff.github.io/geek-charts/sftp-0.1.0.tgz
-    version: 0.1.0
+    - https://github.com/neelesteele/homelab-charts/radarr-1.0.0.tgz
+    version: 1.0.0
   sonarr:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2018-08-19T15:52:24.181785052+02:00
+    created: "2024-01-11T01:14:39.918034-05:00"
     description: Sonarr - Automatic downloader for TV shows ^^
-    digest: 46546f5deb5a34de3444ae2efd37ff9ac0b0029f278c7bbebc0e5ebad99abb9c
-    icon: https://bananaspliff.github.io/geek-charts/sonarr/logo/sonarr.png
+    digest: 6ea8dab734a9f925ba089b1dd93c84a9e3879a50ca0dc74f1a3392973ed20639
+    icon: https://neelesteele.github.io/homelab-charts/sonarr/logo/sonarr.png
     name: sonarr
     urls:
-    - https://bananaspliff.github.io/geek-charts/sonarr-0.1.0.tgz
-    version: 0.1.0
-  transmission-openvpn:
-  - apiVersion: v1
-    appVersion: "1.0"
-    created: 2018-08-19T15:52:24.182913903+02:00
-    description: Transmission torrent client with WebUI while connecting to OpenVPN.
-    digest: 29ed0411392322b691b7815ae519fd3ef05f96dfa8ec3af1adf04e8e69a64e2a
-    icon: https://bananaspliff.github.io/geek-charts/transmission-openvpn/logo/transmission.png
-    name: transmission-openvpn
-    urls:
-    - https://bananaspliff.github.io/geek-charts/transmission-openvpn-0.1.0.tgz
-    version: 0.1.0
-generated: 2018-08-19T15:52:24.177245774+02:00
+    - https://github.com/neelesteele/homelab-charts/sonarr-1.0.0.tgz
+    version: 1.0.0
+generated: "2024-01-11T01:14:39.908963-05:00"

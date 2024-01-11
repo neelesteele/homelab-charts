@@ -11,6 +11,8 @@ env:
     value: "1000"
   - name: PGID
     value: "1000"
+  - name: "TZ"
+    value: "US/New_York"
 
 service:
   type: ClusterIP
@@ -23,35 +25,33 @@ ingress:
     kubernetes.io/tls-acme: "true"
   path: /
   hosts:
-    - radarr.bananaspliff.org
+    - radarr.bangedyour.mom
   tls:
-   - secretName: radarr-bananaspliff-org
+   - secretName: radarr-bangedyour-mom
      hosts:
-       - radarr.bananaspliff.org
-
+       - radarr.bangedyour.mom
 volumes:
-  - name: myvolume
-    persistentVolumeClaim:
-      claimName: myvolume
-
+  - hostPath:
+      path: /media/movies
+      type: ''
+    name: movies
+  - hostPath:
+      path: /media/downloads
+      type: ''
+    name: downloads
+  - hostPath:
+      path: /media/config
+      type: ''
+    name: config
 volumeMounts:
-  - name: myvolume
-    mountPath: "/config"
-    subPath: "configs/radarr"
-  - name: myvolume
-    mountPath: "/downloads/transmission"
-    subPath: "downloads/transmission"
-  - name: myvolume
-    mountPath: "/movies"
-    subPath: "medias/movies"
-
-resources:
-  requests:
-    memory: 128Mi
-    cpu: 0.1
-  limits:
-    memory: 256Mi
-    cpu: 0.5
+  - mountPath: /config
+    name: config
+    subPath: radarr/config
+  - mountPath: /downloads
+    name: downloads
+    subPath: movies
+  - mountPath: /movies
+    name: movies
 
 nodeSelector: {}
 

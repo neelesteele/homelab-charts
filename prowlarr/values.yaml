@@ -2,7 +2,7 @@
 replicaCount: 1
 
 image:
-  repository: linuxserver/sonarr
+  repository: linuxserver/prowlarr
   tag: latest
   pullPolicy: IfNotPresent
 
@@ -11,8 +11,6 @@ env:
     value: "1000"
   - name: PGID
     value: "1000"
-  - name: "TZ"
-    value: "US/New_York"
 
 service:
   type: ClusterIP
@@ -25,17 +23,16 @@ ingress:
     kubernetes.io/tls-acme: "true"
   path: /
   hosts:
-    - sonarr.bangedyour.mom
+    - prowlarr.bangedyour.mom
   tls:
-   - secretName: sonarr-bangedyour-mom
+   - secretName: prowlarr-bangedyour-mom
      hosts:
-       - sonarr.bangedyour.mom
-
+       - prowlarr.bangedyour.mom
 volumes:
   - hostPath:
-      path: /media/tv
+      path: /media/movies
       type: ''
-    name: tv
+    name: movies
   - hostPath:
       path: /media/downloads
       type: ''
@@ -47,20 +44,12 @@ volumes:
 volumeMounts:
   - mountPath: /config
     name: config
-    subPath: radarr/config
+    subPath: prowlarr/config
   - mountPath: /downloads
     name: downloads
-    subPath: tv
-  - mountPath: /tv
-    name: tv
-
-resources:
-  requests:
-    memory: 128Mi
-    cpu: 0.1
-  limits:
-    memory: 256Mi
-    cpu: 0.5
+    subPath: movies
+  - mountPath: /movies
+    name: movies
 
 nodeSelector: {}
 

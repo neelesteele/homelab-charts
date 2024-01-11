@@ -12,7 +12,7 @@ env:
   - name: PGID
     value: "1000"
   - name: "TZ"
-    value: "Europe/Paris"
+    value: "US/New_York"
 
 service:
   type: ClusterIP
@@ -25,21 +25,21 @@ ingress:
     kubernetes.io/tls-acme: "true"
   path: /
   hosts:
-    - ombi.bananaspliff.org
+    - ombi.bangedyour.mom
   tls:
-   - secretName: ombi-bananaspliff-org
+   - secretName: ombi-bangedyour-mom
      hosts:
-       - ombi.bananaspliff.org
+       - ombi.bangedyour.mom
 
 volumes:
-  - name: myvolume
-    persistentVolumeClaim:
-      claimName: myvolume
-
+  - hostPath:
+      path: /media/config
+      type: ''
+    name: config
 volumeMounts:
-  - name: myvolume
-    mountPath: "/config"
-    subPath: "configs/ombi"
+  - mountPath: /config
+    name: config
+    subPath: ombi/config
 
 nodeSelector: {}
 

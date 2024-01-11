@@ -6,7 +6,7 @@ helmfile sample :
 
     repositories:
       - name: neelesteele
-        url: https://neelesteele.github.io/geek-charts
+        url: https://neelesteele.github.io/homelab-charts
 
     releases:
       - name: radarr

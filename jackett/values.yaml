@@ -23,24 +23,28 @@ ingress:
     kubernetes.io/tls-acme: "true"
   path: /
   hosts:
-    - jackett.bananaspliff.org
+    - jackett.bangedyour.mom
   tls:
-   - secretName: jackett-bananaspliff-org
+   - secretName: jackett-bangedyour-mom
      hosts:
-       - jackett.bananaspliff.org
+       - jackett.bangedyour.mom
 
 volumes:
-  - name: myvolume
-    persistentVolumeClaim:
-      claimName: myvolume
-
+  - hostPath:
+      path: /media/downloads
+      type: ''
+    name: downloads
+  - hostPath:
+      path: /media/config
+      type: ''
+    name: config
 volumeMounts:
-  - name: myvolume
-    mountPath: "/config"
-    subPath: "configs/jackett"
-  - name: myvolume
-    mountPath: "/downloads"
-    subPath: "downloads/jackett"
+  - mountPath: /config
+    name: config
+    subPath: jackett/config
+  - mountPath: /downloads
+    name: downloads
+    subPath: jackett
 
 resources:
   requests:
