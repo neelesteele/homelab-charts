@@ -11,8 +11,6 @@ env:
     value: "1000"
   - name: PGID
     value: "1000"
-  - name: "TZ"
-    value: "US/New_York"
 
 service:
   type: ClusterIP
