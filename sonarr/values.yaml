@@ -34,16 +34,17 @@ ingress:
 volumes:
   - hostPath:
       path: /media/tv
-      type: ''
+      type: Directory
     name: tv
   - hostPath:
       path: /media/downloads
-      type: ''
+      type: Directory
     name: downloads
   - hostPath:
       path: /media/config
-      type: ''
+      type: Directory
     name: config
+
 volumeMounts:
   - mountPath: /config
     name: config
@@ -54,13 +55,7 @@ volumeMounts:
   - mountPath: /tv
     name: tv
 
-resources:
-  requests:
-    memory: 128Mi
-    cpu: 0.1
-  limits:
-    memory: 256Mi
-    cpu: 0.5
+resources: {}
 
 nodeSelector: {}
 
