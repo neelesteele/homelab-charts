@@ -45,11 +45,6 @@ volumeMounts:
   - mountPath: /config
     name: config
     subPath: prowlarr/config
-  - mountPath: /downloads
-    name: downloads
-    subPath: movies
-  - mountPath: /movies
-    name: movies
 
 nodeSelector: {}
 
