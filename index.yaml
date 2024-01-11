@@ -2,7 +2,15 @@ apiVersion: v1
 entries:
   confvolume:
   - apiVersion: v1
-    created: "2024-01-11T13:32:55.649522-05:00"
+    created: "2024-01-11T13:53:44.477628-05:00"
+    description: PVC ReadWriteMany for current Namespace
+    digest: 352e8cb10a4cfcf26268da0d04d85ebb3cae0023853a8c8278668ddb4883c08f
+    name: confvolume
+    urls:
+    - https://github.com/neelesteele/homelab-charts/confvolume-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v1
+    created: "2024-01-11T13:53:44.47742-05:00"
     description: PVC ReadWriteMany for current Namespace
     digest: 52b00e38b92eaad22ccfd47f346483a3b772cfdab13614e99fb70c83af7fb455
     name: confvolume
@@ -10,7 +18,7 @@ entries:
     - https://github.com/neelesteele/homelab-charts/confvolume-1.0.0.tgz
     version: 1.0.0
   - apiVersion: v1
-    created: "2024-01-11T13:32:55.649004-05:00"
+    created: "2024-01-11T13:53:44.476195-05:00"
     description: PVC ReadWriteMany for current Namespace
     digest: cf2a4ed25c2205e64cdf3070adec1d71c7354006f7a0f9fddf6e9dba828f85fd
     name: confvolume
@@ -20,7 +28,17 @@ entries:
   jackett:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2024-01-11T13:32:55.650959-05:00"
+    created: "2024-01-11T13:53:44.480977-05:00"
+    description: Jackett - shut:p
+    digest: f197f68238fa38dc46a8f68c571eaa096d40613a141daeb0bb239a7621bfd0b7
+    icon: https://neelesteele.github.io/homelab-charts/jackett/logo/jackett.png
+    name: jackett
+    urls:
+    - https://github.com/neelesteele/homelab-charts/jackett-1.0.2.tgz
+    version: 1.0.2
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2024-01-11T13:53:44.480265-05:00"
     description: Jackett - shut:p
     digest: c5c207028254f52934bcfd5962e15436a955f650b45ee083c73b4a4c719dd2c7
     icon: https://neelesteele.github.io/homelab-charts/jackett/logo/jackett.png
@@ -31,7 +49,17 @@ entries:
   ombi:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2024-01-11T13:32:55.652325-05:00"
+    created: "2024-01-11T13:53:44.48319-05:00"
+    description: Ombi - Automatic downloader for movies :)
+    digest: 2a84b9ac3c4c36b750a7a87d24068a1e3b17bf9cdc0496a696f1ceb25d1cb853
+    icon: https://neelesteele.github.io/homelab-charts/ombi/logo/ombi.png
+    name: ombi
+    urls:
+    - https://github.com/neelesteele/homelab-charts/ombi-1.0.2.tgz
+    version: 1.0.2
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2024-01-11T13:53:44.482839-05:00"
     description: Ombi - Automatic downloader for movies :)
     digest: d6ec290acada9b207ef5b16eea53df0102c022bbb215be74f2a6188229e90810
     icon: https://neelesteele.github.io/homelab-charts/ombi/logo/ombi.png
@@ -41,7 +69,7 @@ entries:
     version: 1.0.1
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2024-01-11T13:32:55.651636-05:00"
+    created: "2024-01-11T13:53:44.481989-05:00"
     description: Ombi - Automatic downloader for movies :)
     digest: 0a7ede2e873044c038f3ecf157ab994eb807871f32b92db75c42e9c2bd7dbd1f
     icon: https://neelesteele.github.io/homelab-charts/ombi/logo/ombi.png
@@ -52,9 +80,9 @@ entries:
   prowlarr:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2024-01-11T13:32:55.654882-05:00"
+    created: "2024-01-11T13:53:44.485411-05:00"
     description: prowlarr - Indexer Manager/Proxy For Torrents/Usenet
-    digest: 1f0a2c7e2abf8f5d1784a6a381798c8a5d8b123272993dc08c44178a5263c99d
+    digest: 7893053b4c69f51b06a5de656f8cba77370819eb4deb2839317537300443a177
     icon: https://neelesteele.github.io/homelab-charts/prowlarr/logo/prowlarr.png
     name: prowlarr
     urls:
@@ -62,7 +90,7 @@ entries:
     version: 1.0.1
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2024-01-11T13:32:55.653668-05:00"
+    created: "2024-01-11T13:53:44.484727-05:00"
     description: prowlarr - Indexer Manager/Proxy For Torrents/Usenet
     digest: d5d2e54896c4f2516f03bc83d2f3ba537e17779b680436b84846b7802a260ac8
     icon: https://neelesteele.github.io/homelab-charts/prowlarr/logo/prowlarr.png
@@ -73,7 +101,17 @@ entries:
   radarr:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2024-01-11T13:32:55.65801-05:00"
+    created: "2024-01-11T13:53:44.491254-05:00"
+    description: Radarr - Automatic downloader for movies :)
+    digest: bf02bfb34c0909fe95225e6f79cc21100a99d8d001a2eda6c1472873719e855d
+    icon: https://neelesteele.github.io/homelab-charts/radarr/logo/radarr.png
+    name: radarr
+    urls:
+    - https://github.com/neelesteele/homelab-charts/radarr-1.0.2.tgz
+    version: 1.0.2
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2024-01-11T13:53:44.490458-05:00"
     description: Radarr - Automatic downloader for movies :)
     digest: 102e834fedc95675f613a583a27844ca05d757262da51cbd212cedcb53a45e17
     icon: https://neelesteele.github.io/homelab-charts/radarr/logo/radarr.png
@@ -83,7 +121,7 @@ entries:
     version: 1.0.1
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2024-01-11T13:32:55.656426-05:00"
+    created: "2024-01-11T13:53:44.488491-05:00"
     description: Radarr - Automatic downloader for movies :)
     digest: e4fa4141647557238603c8567ffd178507689e60fb20c1a70302a1708ccbaac8
     icon: https://neelesteele.github.io/homelab-charts/radarr/logo/radarr.png
@@ -94,7 +132,17 @@ entries:
   sonarr:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2024-01-11T13:32:55.662481-05:00"
+    created: "2024-01-11T13:53:44.496776-05:00"
+    description: Sonarr - Automatic downloader for TV shows ^^
+    digest: 2b25afb02a078b31ee38b844728c6a80f29a85d61f583423212b89c412f88d1a
+    icon: https://neelesteele.github.io/homelab-charts/sonarr/logo/sonarr.png
+    name: sonarr
+    urls:
+    - https://github.com/neelesteele/homelab-charts/sonarr-1.0.3.tgz
+    version: 1.0.3
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2024-01-11T13:53:44.496058-05:00"
     description: Sonarr - Automatic downloader for TV shows ^^
     digest: 248daf31d852b0874b3988113a98099b8acb8d62fdf89f470cf65d07e443d679
     icon: https://neelesteele.github.io/homelab-charts/sonarr/logo/sonarr.png
@@ -104,7 +152,7 @@ entries:
     version: 1.0.2
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2024-01-11T13:32:55.661156-05:00"
+    created: "2024-01-11T13:53:44.494486-05:00"
     description: Sonarr - Automatic downloader for TV shows ^^
     digest: 1c069cbd993f397031c14e5e18126b6cd9491f636767c5f89224accc14e84965
     icon: https://neelesteele.github.io/homelab-charts/sonarr/logo/sonarr.png
@@ -114,7 +162,7 @@ entries:
     version: 1.0.1
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2024-01-11T13:32:55.659333-05:00"
+    created: "2024-01-11T13:53:44.492662-05:00"
     description: Sonarr - Automatic downloader for TV shows ^^
     digest: b59361a26910a8e9f77335598de02345280c6c01b0c90ffc1e4f8cf20b39c7c5
     icon: https://neelesteele.github.io/homelab-charts/sonarr/logo/sonarr.png
@@ -122,4 +170,4 @@ entries:
     urls:
     - https://github.com/neelesteele/homelab-charts/sonarr-1.0.0.tgz
     version: 1.0.0
-generated: "2024-01-11T13:32:55.645803-05:00"
+generated: "2024-01-11T13:53:44.475294-05:00"
