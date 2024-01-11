@@ -5,8 +5,8 @@
 helmfile sample :
 
     repositories:
-      - name: bananaspliff
-        url: https://bananaspliff.github.io/geek-charts
+      - name: neelesteele
+        url: https://neelesteele.github.io/geek-charts
 
     releases:
       - name: radarr
