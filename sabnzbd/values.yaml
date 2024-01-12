@@ -41,12 +41,10 @@ volumes:
 volumeMounts:
   - mountPath: /config
     name: config
-    subPath: radarr/config
+    subPath: sabnzbd/config
   - mountPath: /downloads
     name: downloads
-    subPath: tv
-  - mountPath: /tv
-    name: tv
+    subPath: nzb
 
 resources:
   requests:
