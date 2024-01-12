@@ -2,5 +2,5 @@ apiVersion: v1
 appVersion: "1.0"
 description: nzbhydra2 - Indexer Manager/Proxy For Torrents/Usenet
 name: nzbhydra2
-version: 1.0.0
+version: 1.0.1
 icon: https://neelesteele.github.io/homelab-charts/nzbhydra2/logo/nzbhydra2.png

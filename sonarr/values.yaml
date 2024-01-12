@@ -31,16 +31,16 @@ ingress:
 
 volumes:
   - hostPath:
-    path: /media/tv
-    type: Directory
+      path: /media/tv
+      type: Directory
     name: tv
   - hostPath:
-    path: /media/downloads
-    type: Directory
+      path: /media/downloads
+      type: Directory
     name: downloads
   - hostPath:
-    path: /media/config
-    type: Directory
+      path: /media/config
+      type: Directory
     name: config
 
 volumeMounts:

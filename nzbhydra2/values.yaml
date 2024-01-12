@@ -28,22 +28,22 @@ ingress:
    - secretName: nzbhydra2-bangedyour-mom
      hosts:
        - nzbhydra2.bangedyour.mom
+volumeMounts:
+  - mountPath: /config
+    name: config
+    subPath: nzbhydra2/config
+  - mountPath: /downloads
+    name: downloads
+    subPath: nzb
 volumes:
   - hostPath:
+      name: downloads
       path: /media/downloads
-      type: ''
-    name: downloads
+    type: 'Directory'
   - hostPath:
-      path: /media/config
-      type: ''
       name: config
-volumeMounts:
-   - mountPath: /config
-     name: config
-     subPath: nzbhydra2/config
-   - mountPath: /downloads
-     name: downloads
-     subPath: nzb
+      path: /media/config
+    type: 'Directory'
 
 nodeSelector: {}
 
