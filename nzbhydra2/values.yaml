@@ -36,14 +36,14 @@ volumeMounts:
     name: downloads
     subPath: nzb
 volumes:
-  - hostPath:
-      name: downloads
-      path: /media/downloads
-    type: 'Directory'
-  - hostPath:
-      name: config
+  - name: config
+    hostPath:
       path: /media/config
-    type: 'Directory'
+      type: DirectoryOrCreate
+  - name: downloads
+    hostPath:
+      path: /media/downloads
+      type: DirectoryOrCreate
 
 nodeSelector: {}
 

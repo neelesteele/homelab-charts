@@ -30,19 +30,14 @@ ingress:
        - sonarr.bangedyour.mom
 
 volumes:
-  - hostPath:
-      path: /media/tv
-      type: Directory
-    name: tv
-  - hostPath:
+  - name: downloads
+    hostPath:
       path: /media/downloads
-      type: Directory
-    name: downloads
-  - hostPath:
+      type: DirectoryOrCreate
+  - name: config
+    hostPath:
       path: /media/config
-      type: Directory
-    name: config
-
+      type: DirectoryOrCreate
 volumeMounts:
   - mountPath: /config
     name: config

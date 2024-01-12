@@ -30,14 +30,14 @@ ingress:
        - jackett.bangedyour.mom
 
 volumes:
-  - hostPath:
-      path: /media/downloads
-      type: ''
-    name: downloads
-  - hostPath:
+  - name: config
+    hostPath:
       path: /media/config
-      type: ''
-    name: config
+      type: DirectoryOrCreate
+  - name: downloads
+    hostPath:
+      path: /media/downloads
+      type: DirectoryOrCreate
 volumeMounts:
   - mountPath: /config
     name: config

@@ -2,7 +2,7 @@
 replicaCount: 1
 
 image:
-  repository: linuxserver/ombi
+  repository: linuxserver/sabnzbd
   tag: latest
   pullPolicy: IfNotPresent
 
@@ -23,13 +23,17 @@ ingress:
     kubernetes.io/tls-acme: "true"
   path: /
   hosts:
-    - ombi.bangedyour.mom
+    - sabnzbd.bangedyour.mom
   tls:
-   - secretName: ombi-bangedyour-mom
+   - secretName: sabnzbd-bangedyour-mom
      hosts:
-       - ombi.bangedyour.mom
+       - sabnzbd.bangedyour.mom
 
 volumes:
+  - name: downloads
+    hostPath:
+      path: /media/downloads
+      type: DirectoryOrCreate
   - name: config
     hostPath:
       path: /media/config
@@ -37,7 +41,20 @@ volumes:
 volumeMounts:
   - mountPath: /config
     name: config
-    subPath: ombi/config
+    subPath: radarr/config
+  - mountPath: /downloads
+    name: downloads
+    subPath: tv
+  - mountPath: /tv
+    name: tv
+
+resources:
+  requests:
+    memory: 256Mi
+    cpu: 0.5
+  limits:
+    memory: 512Mi
+    cpu: 1.0
 
 nodeSelector: {}
 

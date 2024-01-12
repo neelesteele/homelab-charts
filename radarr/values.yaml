@@ -29,18 +29,18 @@ ingress:
      hosts:
        - radarr.bangedyour.mom
 volumes:
-  - hostPath:
-      path: /media/movies
-      type: ''
-    name: movies
-  - hostPath:
-      path: /media/downloads
-      type: ''
-    name: downloads
-  - hostPath:
+  - name: config
+    hostPath:
       path: /media/config
-      type: ''
-    name: config
+      type: DirectoryOrCreate
+  - name: downloads
+    hostPath:
+      path: /media/downloads
+      type: DirectoryOrCreate
+  - name: movies
+    hostPath:
+      path: /media/movies
+      type: DirectoryOrCreate
 volumeMounts:
   - mountPath: /config
     name: config

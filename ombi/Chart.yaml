@@ -1,6 +1,6 @@
 apiVersion: v1
 appVersion: "1.0"
-description: Ombi - Automatic downloader for movies :)
+description: Ombi - Plex Request Service
 name: ombi
-version: 1.0.3
+version: 1.0.4
 icon: https://neelesteele.github.io/homelab-charts/ombi/logo/ombi.png
