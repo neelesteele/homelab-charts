@@ -1,0 +1,63 @@
+
+replicaCount: 1
+
+image:
+  repository: jesec/flood
+  tag: latest
+  pullPolicy: IfNotPresent
+
+env:
+  - name: PUID
+    value: "1000"
+  - name: PGID
+    value: "1000"
+  - name: FLOOD_OPTION_port
+    value: "3000"
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: false
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    kubernetes.io/tls-acme: "true"
+  path: /
+  hosts:
+    - flood.bangedyour.mom
+  tls:
+   - secretName: flood-bangedyour-mom
+     hosts:
+       - flood.bangedyour.mom
+
+volumes:
+  - name: downloads
+    hostPath:
+      path: /media/downloads
+      type: DirectoryOrCreate
+  - name: config
+    hostPath:
+      path: /media/config
+      type: DirectoryOrCreate
+volumeMounts:
+  - mountPath: /config
+    name: config
+    subPath: qbittorrent/config
+  - mountPath: /downloads
+    name: downloads
+    subPath: torrent
+
+resources:
+  requests:
+    memory: 256Mi
+    cpu: 0.5
+  limits:
+    memory: 512Mi
+    cpu: 1.0
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
