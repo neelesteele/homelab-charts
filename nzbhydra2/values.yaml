@@ -1,0 +1,52 @@
+
+replicaCount: 1
+
+image:
+  repository: linuxserver/nzbhydra2
+  tag: latest
+  pullPolicy: IfNotPresent
+
+env:
+  - name: PUID
+    value: "1000"
+  - name: PGID
+    value: "1000"
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: false
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    kubernetes.io/tls-acme: "true"
+  path: /
+  hosts:
+    - nzbhydra2.bangedyour.mom
+  tls:
+   - secretName: nzbhydra2-bangedyour-mom
+     hosts:
+       - nzbhydra2.bangedyour.mom
+volumes:
+  - hostPath:
+      path: /media/downloads
+      type: ''
+    name: downloads
+  - hostPath:
+      path: /media/config
+      type: ''
+      name: config
+volumeMounts:
+   - mountPath: /config
+     name: config
+     subPath: nzbhydra2/config
+   - mountPath: /downloads
+     name: downloads
+     subPath: nzb
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
