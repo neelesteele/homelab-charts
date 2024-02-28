@@ -1,0 +1,6 @@
+apiVersion: v1
+appVersion: "1.0"
+description: readarr - Automatic downloader for books :)
+name: readarr
+version: 1.0.5
+icon: https://neelesteele.github.io/homelab-charts/readarr/logo/readarr.png

@@ -1,0 +1,58 @@
+
+replicaCount: 1
+
+image:
+  repository: linuxserver/readarr
+  tag: latest
+  pullPolicy: Always
+
+env:
+  - name: PUID
+    value: "1000"
+  - name: PGID
+    value: "1000"
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: false
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    kubernetes.io/tls-acme: "true"
+  path: /
+  hosts:
+    - readarr.bangedyour.mom
+  tls:
+   - secretName: readarr-bangedyour-mom
+     hosts:
+       - readarr.bangedyour.mom
+volumes:
+  - name: config
+    hostPath:
+      path: /media/config
+      type: DirectoryOrCreate
+  - name: downloads
+    hostPath:
+      path: /media/downloads
+      type: DirectoryOrCreate
+  - name: books
+    hostPath:
+      path: /media/books
+      type: DirectoryOrCreate
+volumeMounts:
+  - mountPath: /config
+    name: config
+    subPath: readarr/config
+  - mountPath: /downloads
+    name: downloads
+    subPath: books
+  - mountPath: /books
+    name: books
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}

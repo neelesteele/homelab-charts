@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ template "readarr.fullname" . }}
+  labels:
+    app: {{ template "readarr.name" . }}
+    chart: {{ template "readarr.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: 8787
+      protocol: TCP
+      name: http
+  selector:
+    app: {{ template "readarr.name" . }}
+    release: {{ .Release.Name }}
