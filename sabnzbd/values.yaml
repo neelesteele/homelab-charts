@@ -44,7 +44,6 @@ volumeMounts:
     subPath: sabnzbd/config
   - mountPath: /downloads
     name: downloads
-    subPath: nzb
 
 resources:
   requests:

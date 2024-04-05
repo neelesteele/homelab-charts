@@ -41,7 +41,7 @@ volumes:
 volumeMounts:
   - mountPath: /config
     name: config
-    subPath: radarr/config
+    subPath: sonarr/config
   - mountPath: /downloads
     name: downloads
     subPath: tv
