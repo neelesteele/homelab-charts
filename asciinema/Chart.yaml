@@ -1,0 +1,6 @@
+apiVersion: v1
+appVersion: "1.0"
+description: asciinema - terminal recorder server
+name: asciinema-server
+version: 1.0.0
+icon: https://neelesteele.github.io/homelab-charts/asciinema/logo/asciinema.png

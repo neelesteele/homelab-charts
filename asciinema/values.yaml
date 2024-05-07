@@ -1,0 +1,69 @@
+
+replicaCount: 1
+
+image:
+  repository: ghcr.io/asciinema/asciinema-server
+  tag: 20240428
+  pullPolicy: Always
+
+env:
+  - name: PUID
+    value: "1000"
+  - name: PGID
+    value: "1000"
+  - name: SECRET_KEY_BASE
+    value: "<64_byte_string>"  # <- see below
+  - name: URL_HOST
+    value: "asciinema.bangedyour.mom"
+  - value: URL_PORT
+    name: "80"
+  - name: SMTP_HOST
+    value: "smtp.bangedyour.mom"
+  - name: SMTP_USERNAME
+    value: "foo"
+  - name: SMTP_PASSWORD
+    value: "bar"
+  - name: UPLOAD_SIZE_LIMIT
+    value: "16000000"
+  - name: DATABASE_URL
+    value: "postgresql://username:password@hostname/dbname?ssl=false&pool_size=2"
+    
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: false
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    kubernetes.io/tls-acme: "true"
+  path: /
+  hosts:
+    - asciinema.bangedyour.mom
+  tls:
+   - secretName: asciinema-bangedyour-mom
+     hosts:
+       - asciinema.bangedyour.mom
+
+volumes:
+  - name: asciinema_data
+    hostPath:
+      path: /mnt/nfs_server/asciinema_data
+      type: DirectoryOrCreate
+volumeMounts:
+  - mountPath: /var/opt/asciinema
+    name: asciinema_data
+
+resources:
+  requests:
+    memory: 256Mi
+    cpu: 0.5
+  limits:
+    memory: 512Mi
+    cpu: 1.0
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
