@@ -45,8 +45,6 @@ volumeMounts:
   - mountPath: /config
     name: config
     subPath: stash/config
-  - mountPath: /downloads
-    name: downloads
   - mountPath: /data
     name: adult
   - mountPath: /metadata
