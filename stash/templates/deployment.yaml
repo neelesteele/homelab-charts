@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ template "whisparr.fullname" . }}
+  name: {{ template "stash.fullname" . }}
   labels:
-    app: {{ template "whisparr.name" . }}
-    chart: {{ template "whisparr.chart" . }}
+    app: {{ template "stash.name" . }}
+    chart: {{ template "stash.chart" . }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: {{ template "whisparr.name" . }}
+      app: {{ template "stash.name" . }}
       release: {{ .Release.Name }}
   template:
     metadata:
       labels:
-        app: {{ template "whisparr.name" . }}
+        app: {{ template "stash.name" . }}
         release: {{ .Release.Name }}
     spec:
       volumes:
@@ -29,7 +29,7 @@ spec:
 {{ toYaml .Values.env | indent 12 }}
           ports:
             - name: http
-              containerPort: 6969
+              containerPort: 9999
               protocol: TCP
           volumeMounts:
 {{ toYaml .Values.volumeMounts | indent 12 }}

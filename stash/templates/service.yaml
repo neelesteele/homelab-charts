@@ -1,19 +1,19 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ template "whisparr.fullname" . }}
+  name: {{ template "stash.fullname" . }}
   labels:
-    app: {{ template "whisparr.name" . }}
-    chart: {{ template "whisparr.chart" . }}
+    app: {{ template "stash.name" . }}
+    chart: {{ template "stash.chart" . }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
 spec:
   type: {{ .Values.service.type }}
   ports:
     - port: {{ .Values.service.port }}
-      targetPort: 6969
+      targetPort: 9999
       protocol: TCP
       name: http
   selector:
-    app: {{ template "whisparr.name" . }}
+    app: {{ template "stash.name" . }}
     release: {{ .Release.Name }}

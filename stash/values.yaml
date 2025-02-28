@@ -33,9 +33,9 @@ volumes:
     hostPath:
       path: /media/config
       type: DirectoryOrCreate
-  - name: downloads
+  - name: config
     hostPath:
-      path: /media/downloads
+      path: /media/config
       type: DirectoryOrCreate
   - name: adult
     hostPath:
@@ -47,8 +47,20 @@ volumeMounts:
     subPath: stash/config
   - mountPath: /downloads
     name: downloads
-  - mountPath: /adult
+  - mountPath: /data
     name: adult
+  - mountPath: /metadata
+    name: adult
+    subPath: metadata
+  - mountPath: /cache
+    name: adult
+    subPath: /cache
+  - mountPath: /blobs
+    name: adult
+    subPath: blobs
+  - mountPath: /generated
+    name: adult
+    subPath: generated
 
 nodeSelector: {}
 
