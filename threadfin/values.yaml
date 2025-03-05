@@ -14,7 +14,7 @@ env:
 
 service:
   type: ClusterIP
-  port: 80
+  port: 34400
 
 ingress:
   enabled: false
@@ -28,16 +28,22 @@ ingress:
    - secretName: threadfin-bangedyour-mom
      hosts:
        - threadfin.bangedyour.mom
-volumes:
-  - name: config
-    hostPath:
-      path: /media/config
-      type: DirectoryOrCreate
-
 volumeMounts:
-  - mountPath: /config
+  - mountPath: /data/conf
     name: config
     subPath: threadfin/config
+  - mountPath: /data/temp
+    name: temp
+
+volumes:
+  - hostPath:
+      path: /media/config
+      type: DirectoryOrCreate
+    name: config
+  - hostPath:
+      path: /tmp/threadfin
+      type: DirectoryOrCreate
+    name: temp
 
 nodeSelector: {}
 
