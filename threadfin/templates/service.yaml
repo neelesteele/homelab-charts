@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ template "threadfin.fullname" . }}
+  labels:
+    app: {{ template "threadfin.name" . }}
+    chart: {{ template "threadfin.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: 34400
+      protocol: TCP
+      name: http
+  selector:
+    app: {{ template "threadfin.name" . }}
+    release: {{ .Release.Name }}

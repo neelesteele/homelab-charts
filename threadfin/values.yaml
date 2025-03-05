@@ -1,0 +1,46 @@
+
+replicaCount: 1
+
+image:
+  repository: fyb3roptik/threadfin
+  tag: latest
+  pullPolicy: Always
+
+env:
+  - name: PUID
+    value: "1000"
+  - name: PGID
+    value: "1000"
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: false
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    kubernetes.io/tls-acme: "true"
+  path: /
+  hosts:
+    - threadfin.bangedyour.mom
+  tls:
+   - secretName: threadfin-bangedyour-mom
+     hosts:
+       - threadfin.bangedyour.mom
+volumes:
+  - name: config
+    hostPath:
+      path: /media/config
+      type: DirectoryOrCreate
+
+volumeMounts:
+  - mountPath: /config
+    name: config
+    subPath: threadfin/config
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
